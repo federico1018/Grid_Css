@@ -1,0 +1,66 @@
+main {
+  display: grid;
+  height: 100vh;
+  grid-gap: 10px;
+  /* grid-template-columns: 1fr 2fr; */
+
+  grid-template-columns:
+    [col-uno-start ] 1fr
+    [col-uno-end col-dos-start] 2fr /*Esto quiere decir que donde empieza el dos, FINALIZA el uno, inician y filaizan las lineas*/
+    [col-dos-end];
+
+  grid-template-rows:
+    [header-start]1fr
+    [header-end contenido-start]2fr
+    [footer-start]1fr
+    [footer-end];
+}
+
+main > * {
+  font-family: sans-serif;
+  background-color: goldenrod;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  grid-column: col-uno-start / col-dos-end;
+}
+article {
+  grid-column: col-dos-start / col-dos-end;
+  grid-row: contenido-start/footer-start;
+}
+
+aside {
+  grid-column: col-uno-start / col-uno-end;
+  grid-row: contenido-start / footer-end;
+}
+
+footer {
+  grid-column: col-dos-start / col-dos-end;
+}
+
+@media (max-width: 390px) {
+  main > * {
+    height: 100%;
+    background-color: rgb(104, 14, 59);
+    grid-template-rows: 50fr 50fr 50fr 50fr;
+  }
+
+  header {
+    grid-column: col-uno/col-dos-end;
+  }
+
+  aside {
+    grid-column: col-uno / col-dos-end;
+  }
+
+  article {
+    grid-column: col-uno / col-dos-end;
+  }
+
+  footer {
+    grid-column: col-uno / col-dos-end;
+  }
+}

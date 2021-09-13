@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+main {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+
+  /*AUTO-PLACEMENT*/
+
+  /*Esto indica a las grid INPLICITOS (RESTO DE ELEMENTOS) a que se acomoden de acuerdo a las propiedades que le demos o que esten el los GRID EXPLICITOS*/
+
+  grid-auto-flow: row; /*Valor por defecto INDICA el flujo de la rejilla y este va  a ir el fila 1 2 3 4 5. SCROLL HACIA ABAJO*/
+  grid-auto-rows: minmax(150px, 1fr);
+
+  grid-auto-flow: column dense; /*Valor COLUMNA INDICA el flujo de la rejilla y este va  a ir el fila SCROOL HACIA LA DERECHA1 
+                                                                                                                        2 
+                                                                                                                        3 
+                                                                                                                        4 
+                                                                                                                        */
+  grid-auto-columns: minmax(150px, 1fr);
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: goldenrod;
+  border: 1px solid rgb(7, 6, 6);
+}
+
+/*PACKING MODES*/
+
+/*Esto va en el GRID-CONTAINER
+ grid-auto-flow: column dense; = Indica que -DENSE- revisa si hay espacios sobrantes y coje los elementos mas cercanos y los ajusta para que nunca queden espacios sobrantes en la rejilla.
+
+ Galerias de imagenes se usan con esto...
+*/
+
+section:nth-child(3n) {
+  background-color: gray;
+  grid-column-end: span 2;
+}
+
+section:nth-child(7n) {
+  background-color: rgb(179, 49, 49);
+  grid-row-end: span 2;
+}
+
+section:nth-child(12n) {
+  background-color: rgb(6, 49, 190);
+  grid-column-end: span 3;
+  grid-row-end: span 3;
+}
+
+/* section:nth-of-type(2) {
+  background-color: greenyellow;
+  grid-column-end: span 2;
+} */

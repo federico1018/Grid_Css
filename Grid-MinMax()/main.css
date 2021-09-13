@@ -1,0 +1,29 @@
+main {
+  height: 100vh;
+  display: grid;
+  grid-gap: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  /* --grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; MEJOR USAR EL REPEAT EN ESTOS CASOS*/
+  /* --grid-template-columns: repeat(8, 1fr);  MEJOR USAR EL REPEAT EN ESTOS CASOS*/
+
+  /*COLOCAREMOS 8 columnas con un minimo y un ancho es decir un LIMITE, lo hacemos con MINMAX()*/
+  /* --grid-template-columns: repeat(8, minmax(100px, 1fr)); */
+
+  /*Ahora haremos un patron de columnas de a Dos: decir la (30px y minimo de 10% y max 1fr) */
+  /* --grid-template-columns: repeat(4, 30px minmax(10%, 1fr)); */
+
+  /*8 Columnas con un minimo marcado por el contenido y maximo del 30%, que no se desporde el contenido
+  Es claro, EL MINIMO LO MARCA EL CONTENIDO, SI SE VA A DESBORDAR MIN-CONTENT NO DEJA.*/
+  /* --grid-template-columns: repeat(8, minmax(min-content, 30%)); */
+
+  /*Ahora lo contrario NO DEJA CRECER LA CAJA, EL ITEM MAS DE SU CONTENIDO*/
+  grid-template-columns: repeat(8, minmax(min-content, max-content));
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(211, 28, 89);
+}

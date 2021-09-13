@@ -1,0 +1,46 @@
+main {
+  display: grid;
+  height: 100vh;
+  grid-gap: 10px;
+  font-family: sans-serif;
+
+  /*A veces se Autogeneran las filas automaticamente, pero es bueno tambien especificarlas con GRID-TEMPLARE-ROWS
+    Se pueden usar Medidas ABSOLUTAS Y/O RELATIVAS O PORCENTAJES no habria problema. */
+
+  /*La cascada coje los valores de abajo YA SE SABE*/
+  grid-template-columns: 30% 400px 300px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+main > * {
+  background-color: rgb(204, 121, 83);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgb(255, 254, 253);
+  font-weight: bold;
+
+  box-shadow: inset 10px 15px 15px rgb(173, 131, 131);
+}
+
+/*PUNTOS DE RUPTURA */
+
+@media (max-width: 600px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+/*RESPONSIVE AL PELO ALV*/
+
+@media (max-width: 300px) {
+  main {
+    max-width: 280px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}

@@ -1,0 +1,44 @@
+section {
+  display: grid;
+  grid-gap: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+/*TAMBIEN SIRVEN EN ROWS*/
+
+/* AUTO-FILL :  Cuando le damos dimensiones a la columna podemos pasarle el parametro AUTO-FILL esto indica que añadera nuevos TRACKS a la columna cuantos añadera? pues segun la dispociccion del wieport Y SE VERAN TRASNPARENTES justo para añadir mas contenido a esa columna*/
+
+.auto-fill {
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.auto-fill div {
+  background-color: goldenrod;
+}
+
+/*----------------------------*/
+
+/*AUTO-FIT : Tambien hace lo mismo, crea espacios para meter mas contenido pero si los espacios no se estan unsando el contenido colapsa y TOMARA TODO EL ESPACIO DISPONIBLE.*/
+
+/*ES DECIR PARA una columna que tiene 3 items de 100px y el tamaño de la pantalla es de 1000px: 
+--Pues AUTO-FILL añadera 7 ITEMS INVISIBLES para usarse como plazca.
+
+--Y AUTO-FIT tomara esos 3 elementos y los esparcira por la pantalla es decir quedaran con un ancho de 399px aprox e IMPORTANTE
+Si se añaden mas items pues seguiran ocupando esos 4 TODA LA PANTALLA PERO LOGICAMENTE SE REDUCIRAN EN TAMAÑO.
+
+*/
+
+.auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.auto-fit div {
+  background-color: hotpink;
+}

@@ -1,0 +1,32 @@
+main {
+  background-color: rgb(77, 61, 69);
+  height: 100vh;
+  display: grid;
+  grid-gap: 10px;
+
+  grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+}
+div {
+  background-color: goldenrod;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: blueviolet;
+}
+
+/*IGUAL que en flexbox esta propiedad reorganiza el elemento y lo pocisiona al final o al principio o donde te plazca.*/
+div:nth-child(4) {
+  background-color: rgb(66, 16, 114);
+  color: green;
+  order: 1;
+  order: -1;
+}
+
+@media (max-width: 450px) {
+  div:nth-child(1) {
+    background-color: rgb(34, 31, 197);
+    color: green;
+    order: -1;
+    order: 1;
+  }
+}

@@ -1,0 +1,29 @@
+main {
+  height: 100vh;
+  display: grid;
+  grid-gap: 11px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+
+  /*Aca solo le estoy definiendo el tramaño a las 2 primeras columnas ETAS 2 SON EXPLICITAS LAS DEMAS SERIAN INPLICITAS*/
+
+  grid-template-columns: 200px 100px;
+
+  /*Con esta propiedad manipulamos las columnas y/o filas explicitas*/
+  grid-auto-columns: 300px;
+
+  grid-auto-flow: column;
+}
+
+div {
+  background-color: goldenrod;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div:first-child,
+div:nth-child(2) {
+  background-color: green;
+  color: white;
+  /* grid-column-end: span 8; */
+}

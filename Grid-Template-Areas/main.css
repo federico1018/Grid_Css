@@ -1,0 +1,54 @@
+main {
+  height: 100vh;
+  display: grid;
+  font-family: sans-serif;
+  grid-gap: 10px;
+
+  /*Al utilizar GRID-TEMPLATE-AREAS NOS AHORRAMOS EL NOMBRAR EL inicio y final de las lineas ya que vienen compuestas dentro de cada area, es decir si definimos una area esta autocompleta el START AND END de las lineas.*/
+
+  grid-template-areas:
+    "header"
+    "contenido"
+    "derecha"
+    "izquierda"
+    "footer";
+}
+
+main > * {
+  background-color: goldenrod;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  grid-area: header;
+}
+
+aside:first-of-type {
+  grid-area: izquierda;
+}
+
+article {
+  grid-area: contenido;
+}
+
+aside:last-of-type {
+  grid-area: derecha;
+}
+
+footer {
+  grid-area: footer;
+}
+
+@media (min-width: 500px) {
+  main {
+    grid-template-areas:
+      "header header header" /*O nombrar en cada columna la parte queremos que colapse y ocupe zonas que pertenecen a otra.*/
+      "izquierda contenido derecha"
+      "footer footer footer"; /*El PUNTO indica que en ese espacio no va a ir cubieerto por el TEMPLATE-AREA*/
+
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 2fr 4fr 1fr;
+  }
+}

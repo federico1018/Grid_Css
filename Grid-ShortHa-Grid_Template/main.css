@@ -71,6 +71,7 @@ aside:last-of-type {
   grid-area: derecha2;
   /* grid-row-end: span 2;*/
 }
+
 footer {
   grid-area: footer;
 }

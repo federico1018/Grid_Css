@@ -55,7 +55,7 @@ section:nth-child(7n) {
 
 section:nth-child(12n) {
   background-color: rgb(6, 49, 190);
-  grid-column-end: span 3;
+  grid-column-end: span 5;
   grid-row-end: span 3;
 }
 

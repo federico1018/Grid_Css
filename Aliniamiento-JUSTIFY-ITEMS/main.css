@@ -1,0 +1,37 @@
+main {
+  display: grid;
+  grid-gap: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+
+  grid-template: repeat(4, 60px) / repeat(3, 1fr); /*Especofocp Primero FILAS Y Luego COLUMNAS*/
+
+  /*Aliniamiento x*/
+  justify-items: stretch; /*Como el JUSTIFY-CONTENT DE FLEX.... ALINEAMIENTO ITEMS*/
+
+  /*Aliniamiento Y*/
+  align-items: stretch;
+
+  grid-auto-flow: row; /*Digo como va a ser el flujo de MI REJILLA SI EN FILA O COLUMNA*/
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: sandybrown;
+  border: thin solid blueviolet;
+}
+
+div:nth-child(5) {
+  background-color: cadetblue;
+
+  /*Aliniamiento ITEM O 2 HORIZONTAL*/
+  justify-self: right;
+}
+
+div:nth-child(8) {
+  background-color: rgb(146, 160, 95);
+
+  /*Aliniamiento ITEM  EN EL EJE VERTICAL*/
+  align-self: center;
+}

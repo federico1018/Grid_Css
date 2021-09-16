@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  height: 100vh;
+  display: grid;
+  grid-gap: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+
+  /*Esto es sin la propiedad recortada
+
+   grid-template-areas:
+    "header header header"
+    "izquierda contenido derecha1"
+    "izquierda contenido derecha2"
+    "izquierda footer footer";
+
+  Con esto nombramos y damos tamaño a las columnas y filas de la rejilla es decir
+    tenemos 3 filas y columnas estas pueden tener un tamaño deerminado o acomodadop 
+
+  grid-template-rows:
+    [inicio] 1fr
+    [contenido-start] 2fr 1fr 1fr
+    [fin];
+
+  grid-template-columns:
+    [inicio] 1fr
+    [contenido-start] 2fr 1fr
+    [fin]; 
+
+  ahora veremos como se hace con el SHORTHAND Grid-Template*/
+
+  /*CON SHORTHAND*/
+
+  grid-template: 
+    /*filas*/
+    [inicio] "header header header" 1fr
+    [contenido-start] "izquierda contenido derecha1" 2fr
+    "izquierda contenido derecha2" 2.5fr
+    "footer footer footer" 1fr [fin]
+    /
+    /*columnas*/
+    [inicio] 1fr [contenido-start] 2fr 1.5fr [fin];
+}
+
+/*------------------------------------------------*/
+
+main > * {
+  background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+}
+
+header {
+  grid-area: header;
+}
+aside:first-of-type {
+  grid-area: izquierda;
+}
+article {
+  grid-area: contenido;
+}
+aside:nth-of-type(2) {
+  grid-area: derecha1;
+}
+aside:last-of-type {
+  grid-area: derecha2;
+  /* grid-row-end: span 2;*/
+}
+footer {
+  grid-area: footer;
+}
+
+@media (max-width: 400px) {
+  main {
+    /*;
+    grid-template-areas:
+      "header"
+      "contenido"
+      "izquierda"
+      "derecha1"
+      "derecha2"
+      "footer";
+
+    grid-template-rows:
+      [inicio] 1fr
+      [contenido] 1fr 1fr 1fr 2fr 1fr
+      [fin];
+
+    grid-template-columns: [inicio] 1fr; 
+    */
+
+    grid-template:
+      [inicio]
+      "header" 1fr
+      "contenido" 1fr
+      "izquierda" 1fr
+      "derecha1" 1fr
+      "derecha2" 1fr
+      "footer" 1fr
+      /
+      [inicio] 1fr;
+  }
+}

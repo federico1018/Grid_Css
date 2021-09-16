@@ -1,0 +1,24 @@
+main {
+  height: 100vh;
+  display: grid;
+  grid-gap: 10px;
+  font-family: "Times New Roman", Times, serif;
+
+  /*ShortHand Grid*/
+
+  /*Primero se especifica las filas y luego las columnas / */
+
+  /*Luego podemos meter el auto-flow para hablarle a los items sobrantes es de cir a los IMPLICIT*/
+
+  /*MUYY CONFUSO MEJOR NO USAR ESTE SHORTHAND PERO AHI ESTA Y POR ALGO SERA*/
+
+  grid: 1fr 3fr / auto-flow 1fr 2fr;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: teal;
+  border: thin solid red;
+}
